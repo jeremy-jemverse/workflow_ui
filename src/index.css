@@ -1,0 +1,147 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 222 33% 13%;
+    --foreground: 0 0% 100%;
+
+    --card: 222 33% 13%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 222 33% 13%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 265 89% 78%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 217 19% 27%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 217 19% 27%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 217 19% 27%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 217 19% 27%;
+    --input: 217 19% 27%;
+    --ring: 265 89% 78%;
+
+    --radius: 0.5rem;
+  }
+
+  .light {
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    --primary: 265 89% 78%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222 47% 11%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 265 89% 78%;
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+/* Custom styles for form elements */
+.form-input {
+  @apply h-10 px-3 py-2 rounded-md border border-input bg-transparent text-sm;
+  @apply focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2;
+  @apply disabled:cursor-not-allowed disabled:opacity-50;
+}
+
+.form-select {
+  @apply h-10 px-3 py-2 rounded-md border border-input bg-transparent text-sm;
+  @apply focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2;
+  @apply disabled:cursor-not-allowed disabled:opacity-50;
+}
+
+.form-textarea {
+  @apply px-3 py-2 rounded-md border border-input bg-transparent text-sm;
+  @apply focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2;
+  @apply disabled:cursor-not-allowed disabled:opacity-50;
+  @apply min-h-[80px] resize-none;
+}
+
+.form-checkbox {
+  @apply h-4 w-4 rounded border border-input bg-transparent;
+  @apply focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2;
+  @apply disabled:cursor-not-allowed disabled:opacity-50;
+}
+
+.form-radio {
+  @apply h-4 w-4 rounded-full border border-input bg-transparent;
+  @apply focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2;
+  @apply disabled:cursor-not-allowed disabled:opacity-50;
+}
+
+/* Custom styles for alerts */
+.alert {
+  @apply p-4 rounded-lg border text-sm;
+}
+
+.alert-info {
+  @apply bg-blue-500/15 border-blue-500 text-blue-500;
+}
+
+.alert-success {
+  @apply bg-emerald-500/15 border-emerald-500 text-emerald-500;
+}
+
+.alert-warning {
+  @apply bg-amber-500/15 border-amber-500 text-amber-500;
+}
+
+.alert-error {
+  @apply bg-red-500/15 border-red-500 text-red-500;
+}
+
+/* Custom styles for tabs */
+.tab {
+  @apply px-4 py-2 text-sm font-medium rounded-md transition-colors;
+  @apply hover:bg-accent hover:text-accent-foreground;
+  @apply data-[state=active]:bg-accent data-[state=active]:text-accent-foreground;
+}
+
+.tab-toolbar {
+  @apply flex gap-1 p-1 rounded-lg bg-muted;
+}
+
+.tab-card {
+  @apply flex border-b border-border;
+}
